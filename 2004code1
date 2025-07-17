@@ -136,6 +136,25 @@ text-shadow: 0 0 1px rgba(255, 255, 255, 0.2);
   color: #FEFFFF;                     /* crisp contrast on deep green */
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 }
+#campaign_sign {
+  background-color: #0A7A52;  /* Wellstone green */
+  border-color:   #055B3B;    /* deeper evergreen edge */
+}
+#menu_container {
+  background-color: #E9F4F0;  /* soft mint‑white wash */
+}
+#overall_result_container {
+  background-color: #E9F4F0;  /* match menu for visual unity */
+}
+#state_info h3 {
+  background-color: #0E8E60;  /* lighter header highlight */
+}
+#state_result h3 {
+  background-color: #0E8E60;
+}
+#overall_result h3 {
+  background-color: #0E8E60;
+}
 `;
 
 document.head.appendChild(style);
