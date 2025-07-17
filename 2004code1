@@ -19,7 +19,8 @@ style.id = 'dynamic-style';
 
 style.innerHTML = `
   .campaign_trail_start_emphasis {
-    background-color: #232521;
+    /* Evergreen core */
+    background-color: #0A7A52;  /* primary Wellstone green */
   }
   a:-webkit-any-link {
     color: #000000;
