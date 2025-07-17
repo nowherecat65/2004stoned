@@ -13,7 +13,11 @@ nct_stuff.themes[nct_stuff.selectedTheme].coloring_title = "#055B3B";
 RecReading = true
 $("#game_window")[0].style.backgroundColor = nct_stuff.themes[nct_stuff.selectedTheme].coloring_window;
 $(".container")[0].style.backgroundColor = "#E9F4F0";
-document.body.background = "https://i.imgur.com/GBQ2QFW.png"
+$(".container")[0].style.border = "none";
+document.body.style.backgroundImage  = "url('https://i.postimg.cc/pdMqD2Rx/DONESONhhgsdmaroon-subtle-gradient-720-1-1-2-gigapixel-cgi-9x-1.png')";
+document.body.style.backgroundRepeat = "no-repeat";   // stops tiling
+document.body.style.backgroundSize = "cover";         // or "contain"
+document.body.style.backgroundPosition = "center";
 corrr = '\n\
 <h2 style="\
   color:#F9F7F3; \
