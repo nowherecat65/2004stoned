@@ -150,6 +150,9 @@ text-shadow: 0 0 1px rgba(255, 255, 255, 0.2);
   background-color: #0A7A52;  /* Wellstone green */
   border-color:   #055B3B;    /* deeper evergreen edge */
 }
+#state_result_container {
+  background-color: #0A7A52;  /* soft mint‑white wash */
+}
 #menu_container {
   background-color: #0A7A52;  /* soft mint‑white wash */
 }
