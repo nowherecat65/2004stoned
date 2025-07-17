@@ -8,15 +8,140 @@ campaignTrail_temp.opponents_weighted_json = JSON.parse("[{\"election\": 20, \"c
 campaignTrail_temp.temp_election_list = [{"id": 9, "year": 2004, "is_premium": 0, "display_year": "2004stoned"}];
 campaignTrail_temp.credits = '.theanswerisme';
 document.getElementById("header").src = "https://i.imgur.com/TGWoFF8.png"
-nct_stuff.themes[nct_stuff.selectedTheme].coloring_window = "#BFE6FF";
-document.getElementsByClassName("game_header")[0].style.backgroundColor = nct_stuff.themes[nct_stuff.selectedTheme].coloring_title;
+nct_stuff.themes[nct_stuff.selectedTheme].coloring_window = "#0A7A52";
+nct_stuff.themes[nct_stuff.selectedTheme].coloring_title = "#055B3B";
 $("#game_window")[0].style.backgroundColor = nct_stuff.themes[nct_stuff.selectedTheme].coloring_window;
-$(".container")[0].style.backgroundColor = "#FFFFFF";
+$(".container")[0].style.backgroundColor = "#E9F4F0";
 document.body.background = "https://i.imgur.com/GBQ2QFW.png"
-document.head.innerHTML += "<style>#results_container {color:#000000;} .inner_window_w_desc {background-color:#E8FBFF!important;}</style>";
+let style = document.createElement('style');
+style.type = 'text/css';
+style.id = 'dynamic-style';
 
-HistHexcolour=["#4d6fc9","#d84b4b","#FFF62C","#00C100"];
-        HistName=[" Howard Dean"," George W. Bush"," Michael Badnarik"," Ralph Nader"];
+style.innerHTML = `
+  .campaign_trail_start_emphasis {
+    background-color: #232521;
+  }
+  a:-webkit-any-link {
+    color: #000000;
+  }
+          #opponent_selection_description_window {
+  background: linear-gradient(to bottom, #F3F9F7 0%, #E9F4F0 50%, #DCEAE6 100%) !important;
+background-image: repeating-radial-gradient(rgba(0, 0, 0, 0.0075) 0.5px, transparent 1px);
+background-blend-mode: multiply;
+text-shadow: 0 0 1px rgba(255, 255, 255, 0.2);
+border-radius: 3.2px;
+          }
+          #inner_window_1 {
+  background: linear-gradient(to bottom, #F3F9F7 0%, #E9F4F0 50%, #DCEAE6 100%) !important;
+background-image: repeating-radial-gradient(rgba(0, 0, 0, 0.0075) 0.5px, transparent 1px);
+background-blend-mode: multiply;
+text-shadow: 0 0 1px rgba(255, 255, 255, 0.2);
+border-radius: 3.2px;
+          }
+          #inner_window_2{
+            animation: bgFadeS1 1s ease-in-out forwards !important;
+background-image: repeating-radial-gradient(rgba(0, 0, 0, 0.0075) 0.5px, transparent 1px);
+background-blend-mode: multiply;
+text-shadow: 0 0 1px rgba(255, 255, 255, 0.2);
+          }
+          .inner_window_sign_display {
+            animation: bgFadeS1 1s ease-in-out forwards !important;
+background-image: repeating-radial-gradient(rgba(0, 0, 0, 0.0075) 0.5px, transparent 1px);
+background-blend-mode: multiply;
+text-shadow: 0 0 1px rgba(255, 255, 255, 0.2);
+background-color:#e6e4e1;
+border-radius: 3.2px;
+          }
+          #candidate_description_window {
+  background: linear-gradient(to bottom, #F3F9F7 0%, #E9F4F0 50%, #DCEAE6 100%) !important;
+background-image: repeating-radial-gradient(rgba(0, 0, 0, 0.0075) 0.5px, transparent 1px);
+background-blend-mode: multiply;
+text-shadow: 0 0 1px rgba(255, 255, 255, 0.2);
+border-radius: 3.2px;
+            overflow:hidden;
+          }
+          #running_mate_description_window {
+  background: linear-gradient(to bottom, #F3F9F7 0%, #E9F4F0 50%, #DCEAE6 100%) !important;
+background-image: repeating-radial-gradient(rgba(0, 0, 0, 0.0075) 0.5px, transparent 1px);
+background-blend-mode: multiply;
+text-shadow: 0 0 1px rgba(255, 255, 255, 0.2);
+border-radius: 3.2px;
+            overflow:hidden;
+          }
+          #election_description_window{
+  background: linear-gradient(to bottom, #F3F9F7 0%, #E9F4F0 50%, #DCEAE6 100%) !important;
+background-image: repeating-radial-gradient(rgba(0, 0, 0, 0.0075) 0.5px, transparent 1px);
+background-blend-mode: multiply;
+border-radius: 3.2px;
+          }
+          #election_summary{
+            width:auto;
+            z-index: 0;
+            color: #000000;
+            text-shadow: 
+  	      0px 0px 1px rgba(32, 29, 26, 0.15);
+          }
+#map_container {
+  background: linear-gradient(to bottom, #F3F9F7 0%, #E9F4F0 50%, #DCEAE6 100%) !important;
+  border-radius: 4.3px;
+text-shadow: 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    inset 0 0 2px rgba(0, 0, 0, 0.08),   /* Soft inner depth */
+    0 0 0 1px #055B3B;                  /* Outer noir edge (hard frame) */
+  position: relative;
+background-image: repeating-radial-gradient(rgba(0, 0, 0, 0.0075) 0.5px, transparent 1px);
+background-blend-mode: multiply;
+  overflow: hidden;
+}
+.inner_window_question {
+  background: linear-gradient(to bottom, #F3F9F7 0%, #E9F4F0 50%, #DCEAE6 100%) !important;
+  border-radius: 4.3px;
+text-shadow: 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    inset 0 0 2px rgba(0, 0, 0, 0.08),   /* Soft inner depth */
+    0 0 0 1px #055B3B;                  /* Outer noir edge (hard frame) */
+  position: relative;
+background-image: repeating-radial-gradient(rgba(0, 0, 0, 0.0075) 0.5px, transparent 1px);
+background-blend-mode: multiply;
+  overflow: hidden;
+}
+.window, .overlay_window, .modal-content, .modal-body {
+  background: linear-gradient(to bottom, #F3F9F7 0%, #E9F4F0 50%, #DCEAE6 100%) !important;
+  background-image: repeating-radial-gradient(rgba(0, 0, 0, 0.0075) 0.5px, transparent 1px);
+  background-blend-mode: multiply;
+  border-radius: 8px;
+text-shadow: 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1);
+}
+.inner_window_question h3 {
+  /* Wellstone‑style evergreen header */
+  background: linear-gradient(
+    180deg,
+    #0E8E60 0%,   /* fresh highlight */
+    #0A7A52 20%,  /* core Wellstone green */
+    #08724D 40%,  /* mid‑tone depth */
+    #076C46 60%,  /* richer low‑mid */
+    #06653F 80%,  /* near‑shadow */
+    #055B3B 100%  /* anchor edge */
+  );
+  border: 2px solid #055B3B;          /* darker evergreen frame */
+  box-shadow:
+    inset 0 0 3px rgba(5, 91, 59, 0.25),   /* soft inner depth */
+    inset 0 1px 0 rgba(255, 255, 255, 0.15), /* subtle top bevel */
+    inset 0 -1px 0 rgba(0, 0, 0, 0.10);      /* subtle bottom bevel */
+  padding: 2.25px 4.25px;
+  font-family: "Tahoma", "Verdana", sans-serif;
+  font-size: 14.5px;
+  color: #FEFFFF;                     /* crisp contrast on deep green */
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+}
+`;
+
+document.head.appendChild(style);
+document.head.innerHTML += "<style>#results_container {color:#000000;} .inner_window_w_desc {background-color:#086B47!important;}</style>";
+
+HistHexcolour=["#468BB8","#CA4B59","#E3C144","#D7D4CC"];
+        HistName=[" Paul Wellstone"," George W. Bush"," Michael Badnarik/Others"," Tom Golisano"];
         HistEV=[284,254,0,0];
         HistPV=["61,025,377","60,047,014","685,498","501,745"];
         HistPVP=["49.9%","49.1%","0.5%","0.4%"];
